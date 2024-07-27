@@ -9,7 +9,7 @@ const PORT=process.env.PORT;
 //middleware
 app.use(express.json())
 const corsOptions = {
-    origin: ["http://localhost:5173"],
+    origin: ["https://expense-pal.vercel.app"],
     methods:['POST','GET','DELETE'],
     credentials:true,
   };
@@ -18,7 +18,7 @@ const corsOptions = {
   app.use((req, res, next) => {
     res.setHeader(
       "Access-Control-Allow-Origin",
-      "http://localhost:5173"
+      "https://expense-pal.vercel.app"
     );
     res.header(
       "Access-Control-Allow-Headers",
