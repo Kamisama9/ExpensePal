@@ -9,9 +9,22 @@ const PORT=process.env.PORT;
 //middleware
 app.use(express.json())
 const corsOptions = {
-    origin: "http://localhost:5173", // Your frontend domain
-    credentials: true,
+    origin: true,
   };
+  
+  //Add Access Control Allow Origin headers
+  app.use((req, res, next) => {
+    res.setHeader(
+      "Access-Control-Allow-Origin",
+      "http://localhost:5173"
+    );
+    res.header(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept"
+    );
+    next();
+  });
+
   app.use(cors(corsOptions));
 
 db();
