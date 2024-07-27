@@ -8,7 +8,11 @@ require("dotenv").config()
 const PORT=process.env.PORT;
 //middleware
 app.use(express.json())
-app.use(cors())
+const corsOptions = {
+    origin: "http://localhost:5173", // Your frontend domain
+    credentials: true,
+  };
+  app.use(cors(corsOptions));
 
 db();
 
