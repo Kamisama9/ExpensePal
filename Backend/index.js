@@ -13,6 +13,9 @@ app.use(cors())
 db();
 
 app.use('/api/v1',transaction)
+app.post('/',(req,res)=>{
+    res.send('Hello')
+})
 app.listen(PORT,()=>{
     console.log("Listening on Port: ",PORT)
 })
