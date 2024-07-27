@@ -9,7 +9,9 @@ const PORT=process.env.PORT;
 //middleware
 app.use(express.json())
 const corsOptions = {
-    origin: true,
+    origin: ["http://localhost:5173"],
+    methods:['POST','GET','DELETE'],
+    credentials:true,
   };
   
   //Add Access Control Allow Origin headers
